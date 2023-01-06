@@ -15,11 +15,9 @@ from scipy.stats import binned_statistic
 from sklearn.preprocessing import OrdinalEncoder
 from sklearn.pipeline import Pipeline
 
-from cyclic_boosting import binning, flags, CBFixedVarianceRegressor, CBPoissonRegressor, observers, common_smoothers
+from cyclic_boosting import binning, flags, CBPoissonRegressor, CBNBinomC, CBExponential, observers, common_smoothers
 from cyclic_boosting.smoothing.onedim import SeasonalSmoother, IsotonicRegressor
 from cyclic_boosting.plots import plot_analysis
-from cyclic_boosting.nbinom import CBNBinomC
-from cyclic_boosting.price import CBExponential
 
 from IPython import embed
 
@@ -596,7 +594,6 @@ def cb_mean_model():
 
     plobs = [observers.PlottingObserver(iteration=-1)]
 
-#    est = CBFixedVarianceRegressor(
     est = CBPoissonRegressor(
         feature_properties=fp,
         feature_groups=features,
