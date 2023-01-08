@@ -19,8 +19,6 @@ from cyclic_boosting import binning, flags, CBPoissonRegressor, CBNBinomC, CBExp
 from cyclic_boosting.smoothing.onedim import SeasonalSmoother, IsotonicRegressor
 from cyclic_boosting.plots import plot_analysis
 
-from IPython import embed
-
 
 def plot_CB(filename, plobs, binner):
     for i, p in enumerate(plobs):
@@ -876,8 +874,6 @@ def main(args):
 #    plotting(X)
 
     eval_results(X['yhat_mean'][mask], X['y'][mask])
-
-#    embed()
 
 
 if __name__ == "__main__":
